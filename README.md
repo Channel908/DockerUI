@@ -60,3 +60,44 @@ kubectl proxy
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
+
+## Apply an App to the Cluster
+```
+docker pull channel908/simpleapi
+```
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleapi-depl
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simpleapi
+  template:
+    metadata:
+      labels:
+        app: simpleapi
+    spec:
+      containers:
+        - name: simpleapi
+          image: channel908/simpleapi:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simpleapi-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: simpleapi
+  ports:
+  - name: simpleapi
+    protocol: TCP
+    port: 80
+    targetPort: 80 
+```
+
+
