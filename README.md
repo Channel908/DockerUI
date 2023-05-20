@@ -1,6 +1,6 @@
 # Docker Desktop Kubernetes with UI
 
-## Instal the Docker Kubernetes UI
+## Install the Docker Kubernetes UI
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
@@ -16,6 +16,10 @@ kind: ServiceAccount
 metadata:
   name: admin-user
   namespace: kubernetes-dashboard
+```
+
+```
+kubectl apply -f dockerui-user-account.yaml
 ```
 
 ## Create a ClusterRoleBinding
@@ -34,4 +38,7 @@ subjects:
 - kind: ServiceAccount
   name: admin-user
   namespace: kubernetes-dashboard
+```
+```
+kubectl apply -f dockerui-cluster-role.yaml
 ```
