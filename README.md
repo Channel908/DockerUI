@@ -65,7 +65,7 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 ```
 docker pull channel908/simpleapi
 ```
-
+app-deploy.yaml
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -100,4 +100,6 @@ spec:
     targetPort: 80 
 ```
 
-
+```
+kubectl apply -f app-deploy.yaml
+```
