@@ -49,6 +49,12 @@ kubectl apply -f dockerui-cluster-role.yaml
 kubectl -n kubernetes-dashboard create token admin-user
 ```
 
+## Start the Proxy
+
+```
+kubectl proxy
+```
+
 ## Launch the Dashboard
 
 ```
