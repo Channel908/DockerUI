@@ -42,3 +42,9 @@ subjects:
 ```
 kubectl apply -f dockerui-cluster-role.yaml
 ```
+
+## Get the Service Account Security Toen
+
+```
+kubectl -n kubernetes-dashboard create token admin-user
+```
