@@ -43,8 +43,14 @@ subjects:
 kubectl apply -f dockerui-cluster-role.yaml
 ```
 
-## Get the Service Account Security Toen
+## Get the Service Account Security Token
 
 ```
 kubectl -n kubernetes-dashboard create token admin-user
+```
+
+## Launch the Dashboard
+
+```
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
