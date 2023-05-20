@@ -1,4 +1,4 @@
-# DockerK8SUI
+# Docker Desktop Kubernetes with UI
 
 ## Create a Service Account
 
