@@ -48,7 +48,7 @@ kubectl apply -f dockerui-cluster-role.yaml
 ```
 kubectl -n kubernetes-dashboard create token admin-user
 ```
-copy the token value displayed
+Copy the token value displayed
 
 ## Start the Proxy
 
@@ -61,7 +61,7 @@ kubectl proxy
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
-paste the token value into the password field
+Paste the token value into the password field
 
 
 ## Apply an App to the Cluster
