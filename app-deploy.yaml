@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleapi-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simpleapi
+  template:
+    metadata:
+      labels:
+        app: simpleapi
+    spec:
+      containers:
+        - name: simpleapi
+          image: channel908/simpleapi:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simpleapi-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: simpleapi
+  ports:
+  - name: simpleapi
+    protocol: TCP
+    port: 80
+    targetPort: 80 
