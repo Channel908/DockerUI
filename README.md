@@ -57,14 +57,12 @@ kubectl proxy
 ```
 
 ## Launch the Dashboard
-
-```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+```
 
 Paste the token value into the password field
-
 
 ## Apply an App to the Cluster
 ```
